@@ -5,17 +5,20 @@ perlinfo.json
 `perlinfo.json.pl` is a single file CGI script that you can deploy on a web
 to get information about the installed perl.
 
-The information is collected using [Config::Perl::V][1] and the output is
-in JSON to be parsable by some future tools or JavaScript code.
-The script embeds (using [App::FatPacker][2]) both `Config::Perl::V` and
-[JSON::PP][3] so it has no dependency besides modules distributed with perl
-itself.
+The information is collected using [Config::Perl::V][Config::Perl::V] and the
+output is in JSON to be parsable by some future tools or JavaScript code.
+The script embeds (using [App::FatPacker][App::FatPacker]) both
+`Config::Perl::V` and [JSON::PP][JSON::PP] so it has no dependency besides
+modules distributed with perl itself.
 
-    [1]: https://metacpan.org/module/Config::Perl::V
-    [2]: https://metacpan.org/module/App::FatPacker
-    [3]: https://metacpan.org/module/JSON::PP
+   [Config::Perl::V]: https://metacpan.org/module/Config::Perl::V
+   [App::FatPacker]: https://metacpan.org/module/App::FatPacker
+   [JSON::PP]: https://metacpan.org/module/JSON::PP
 
 ### Building
+
+Travis: [![Build status](https://travis-ci.org/dolmen/perlinfo.json.png?branch=master)](https://travis-ci.org/dolmen/perlinfo.json)
+
 
     git clone https://github.com/dolmen/perlinfo.json.git
     cd perlinfo.json
