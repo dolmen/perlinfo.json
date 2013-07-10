@@ -11,12 +11,10 @@ if ($ENV{GATEWAY_INTERFACE}) {
 }
 
 
-my $config = do {
-    # If we are fatpacked a CODEREF has been inserted into @INC,
-    # so we remove it
-    local @INC = grep { ! ref } @INC;
-    Config::Perl::V::myconfig()
-};
+my $config = Config::Perl::V::myconfig();
+# If we are fatpacked a CODEREF has been inserted into @INC,
+# so we remove it
+$config->{inc} = [ grep { ! ref } @{$config->{inc}} ];
 
 print JSON::PP->new->ascii->pretty->encode($config);
 
