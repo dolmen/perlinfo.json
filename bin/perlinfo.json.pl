@@ -56,5 +56,5 @@ $config->{+__PACKAGE__} = {
     versions => loaded_module_versions(),
 };
 
-print JSON::PP->new->ascii->pretty->encode($config);
+print JSON::PP->new->canonical->ascii->pretty->encode($config);
 
