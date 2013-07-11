@@ -51,7 +51,8 @@ $config->{inc} = [ grep { ! ref } @{$config->{inc}} ];
 
 
 # Inject info about ourself
-# This gives some information about loaded modules without I/O cost
+# This gives information about some available modules (that have been loaded
+# to run this script) without any I/O cost.
 $config->{+__PACKAGE__} = {
     versions => loaded_module_versions(),
 };
