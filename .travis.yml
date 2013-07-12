@@ -6,7 +6,8 @@ perl:
     - "5.16"
     - "5.18"
 install:
-    - cpanm --notest App::FatPacker Git::Sub Config::Perl::V JSON::PP || { cat ~/.cpanm/build.log ; false ; }
+    - cpanm --notest App::FatPacker Git::Sub || { cat ~/.cpanm/build.log ; false ; }
+    - cpanm --reinstall --notest Config::Perl::V JSON::PP || { cat ~/.cpanm/build.log ; false ; }
     - perl build.pl
 script:
     - perl ./perlinfo.json.pl
