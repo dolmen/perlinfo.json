@@ -45,6 +45,6 @@ foreach (qw<Config/Perl/V.pm JSON/PP.pm>) {
     }
 }
 
-chmod 0701, 'perlinfo.json.pl';
+chmod 0755, 'perlinfo.json.pl';
 
 say 'Done.';
