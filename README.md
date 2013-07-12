@@ -28,6 +28,10 @@ Travis: [![Build status](https://travis-ci.org/dolmen/perlinfo.json.png?branch=m
 You can now use perlinfo.json.pl either from the command-line or as a CGI
 that you can deploy on a web host (often in a `cgi-bin` directory).
 
+### Examples
+
+[SourceForge.net](http://dolmen.users.sourceforge.net/cgi-bin/perlinfo.json)
+
 ### Copyright & license
 
 Copyright 2013 Olivier Mengué.
