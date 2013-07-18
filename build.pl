@@ -34,6 +34,15 @@ use Module::CoreList;
 
 open my $script, '>:raw', 'perlinfo.json.pl';
 my $stdout = select $script;
+
+# Use /bin/sh as a launcher to be independent of the perl location
+print $script <<'EOF';
+#!/bin/sh
+#! -*- perl -*-
+eval 'exec perl -x $0 ${1+"$@"}'
+    if 0;
+EOF
+
 print $script Packer->script_command_pack([ 'bin/perlinfo.json.pl' ]);
 close $script;
 select $stdout;
