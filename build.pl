@@ -36,7 +36,9 @@ open my $script, '>:raw', 'perlinfo.json.pl';
 my $stdout = select $script;
 
 # Use /bin/sh as a launcher to be independent of the perl location
-print $script <<'EOF';
+# -x makes the line numbers start at the /\#\!.*perl/ line, so we fix
+# with #line
+print $script <<'EOF', "#line 6\n";
 #!/bin/sh
 #! -*- perl -*-
 eval 'exec perl -x $0 ${1+"$@"}'
